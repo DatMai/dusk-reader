@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dusk Reader</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon48.png" alt="" width="28" height="28">
+    <h1>Dusk Reader</h1>
+    <label class="switch" title="Toggle (Alt+Shift+D)">
+      <input type="checkbox" id="enabled">
+      <span></span>
+    </label>
+  </header>
+
+  <section class="site">
+    <div>
+      <div class="host" id="host">—</div>
+      <div class="status" id="status"></div>
+    </div>
+    <button id="siteToggle" type="button">Disable on this site</button>
+  </section>
+
+  <section>
+    <div class="label">Mode</div>
+    <div class="seg" role="radiogroup">
+      <button type="button" data-mode="dynamic" role="radio">Dynamic</button>
+      <button type="button" data-mode="filter" role="radio">Filter</button>
+    </div>
+    <p class="hint" id="modeHint"></p>
+  </section>
+
+  <section class="sliders">
+    <label>Brightness <output for="brightness"></output><input type="range" id="brightness" min="50" max="150"></label>
+    <label>Contrast <output for="contrast"></output><input type="range" id="contrast" min="50" max="150"></label>
+    <label>Sepia <output for="sepia"></output><input type="range" id="sepia" min="0" max="100"></label>
+    <label>Grayscale <output for="grayscale"></output><input type="range" id="grayscale" min="0" max="100"></label>
+  </section>
+
+  <section class="colors" id="colors">
+    <label><input type="color" id="bg"> Background</label>
+    <label><input type="color" id="text"> Text</label>
+  </section>
+
+  <section>
+    <label class="check"><input type="checkbox" id="detectDark"> Skip sites that are already dark</label>
+  </section>
+
+  <footer>
+    <button id="reset" type="button" class="link">Reset to defaults</button>
+    <span>Alt+Shift+D toggle · Alt+Shift+A this site</span>
+  </footer>
+  <p class="copyright">© 2026 <a href="https://anhemsoftware.com" target="_blank" rel="noopener">AnhEmSoftware</a></p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
